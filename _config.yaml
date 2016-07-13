@@ -1,0 +1,48 @@
+# ==============================================================================
+# Configuration variables, available both in Grunt and Assemble
+# ==============================================================================
+#
+# To use them in Grunt use the lo-dash template string format, for example:
+# '<%= config.temp %>' will be rendered to 'out/tmp'
+#
+# To use them in Assemble use the Handlebars syntax, for example:
+# {{ config.temp }} will be rendered to 'out/tmp'
+#
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Configurable paths, mainly used with Grunt
+# ------------------------------------------------------------------------------
+
+# Source
+app: 'app'
+# Production build
+dist: 'dist'
+# Temporary build
+temp: 'out'
+# Grunt config and aliases
+grunt: '.grunt'
+# Test resources
+test: 'test'
+# Coverage location
+coverage: 'test/coverage/phantomjs'
+# Resources location - raw content items, sass, large images everything that will be processed during the build
+resources: 'resources'
+
+# ------------------------------------------------------------------------------
+# Banner
+# ------------------------------------------------------------------------------
+#
+# The template for the banner that will be added to minified javascript, html
+# and css so it's easier to tell when it's been generated.
+#
+# ------------------------------------------------------------------------------
+
+banner: 'Made with <%= package.name %>, on <%= grunt.template.today("dd-mm-yyyy") %>'
+
+# ------------------------------------------------------------------------------
+# Build
+# ------------------------------------------------------------------------------
+
+rev:
+  src: dist/assets/scripts/**/*.js

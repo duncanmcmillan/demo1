@@ -1,0 +1,76 @@
+default:
+  description: "Quick default tasks for grunt"
+  tasks:
+    - 'sass'
+
+#default:
+#  description: 'The default task for grunt'
+#  tasks:
+#    - show-effective-config
+#    - 'newer:jshint'
+#    - 'test'
+#    - 'build'
+#    - 'serve'
+
+test:
+  description: 'Test task for grunt'
+  tasks:
+    - 'clean:server'
+    - 'copy:styles'
+    - 'autoprefixer'
+    - 'karma:unit'
+    - 'clean:orphanedcoverage'
+
+sonar:
+  description: 'Run sonar for development'
+  tasks:
+    - 'sonarRunner:issues'
+
+sonar-ci:
+  description: 'Run sonar for ci'
+  tasks:
+    - 'sonarRunner:publish'
+
+build:
+  description: 'Build task for grunt'
+  tasks:
+    - 'clean'
+    - 'compass'
+    - 'create-yaml'
+    - 'copy:yaml'
+    - handlebars
+    - 'clean:yaml'
+    - 'copy:dist'
+    - 'copy:sitemap'
+    - 'create-decommissioned-site-redirects'
+
+publish:
+  description: 'Publish site'
+  tasks:
+    - 'build'
+    - 'copy-redirects'
+    - 'copy-site'
+
+publish-redirects:
+  description: 'Publish redirects'
+  tasks:
+    - 'create-decommissioned-site-redirects'
+    - 'copy-redirects'
+
+serve:
+  description: 'Serve up the web site'
+  tasks:
+    - 'copy:styles'
+    - 'autoprefixer'
+    - 'configureProxies:server'
+    - 'connect:livereload'
+    - 'connect:dist'
+    - 'watch'
+    - 'watch:compass'
+    - 'watch:js'
+    - 'watch:hbs'
+
+healthcheck:
+  description: 'Run a healthcheck on the site'
+  tasks:
+   - 'checklinks'

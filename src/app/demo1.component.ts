@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class Demo1AppComponent {
   title = 'demo1 works!';
+
+  test_var : Number = 3;
 }

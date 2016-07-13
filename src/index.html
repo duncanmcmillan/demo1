@@ -5,6 +5,8 @@
   <title>Demo1</title>
   <base href="/">
 
+  <link rel="stylesheet" href="style/main.css" />
+
   {{#unless environment.production}}
   <script src="/ember-cli-live-reload.js" type="text/javascript"></script>
   {{/unless}}
@@ -14,18 +16,17 @@
 <body>
   <demo1-app>Loading...</demo1-app>
 
-  
+
 
     {{#each scripts.polyfills}}<script src="{{.}}"></script>{{/each}}
     <script>
       System.import('system-config.js').then(function () {
         System.import('main');
+
       }).catch(console.error.bind(console));
+
+
     </script>
-
-  
-
-
 
 </body>
 </html>
