@@ -29,6 +29,8 @@ const barrels: string[] = [
   // App specific barrels.
   'app',
   'app/shared',
+  'app/child_components/stats-client',
+  'app/child_components/ctrl-button',
   /** @cli-barrel */
 ];
 
